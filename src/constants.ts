@@ -9,6 +9,8 @@ export interface Project {
   category: string;
   image: string;
   year: string;
+  link?: string;
+  videoEmbed?: string;
 }
 
 export interface Exhibition {
@@ -32,7 +34,8 @@ export const PROJECTS: Project[] = [
     title: "URBAN SILENCE",
     category: "Cinematography",
     image: "https://images.unsplash.com/photo-1449156001935-b2873bd73f00?q=80&w=1000&auto=format&fit=crop",
-    year: "2024"
+    year: "2024",
+    videoEmbed: "https://drive.google.com/file/d/1kUE0cddqWtcq4bnHCeS1Id4Kkyk4jNGZ/preview"
   },
   {
     id: "3",
@@ -52,8 +55,9 @@ export const PROJECTS: Project[] = [
     id: "5",
     title: "SCULPTED LIGHT",
     category: "Studio Photography",
-    image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
-    year: "2024"
+    image: "https://drive.google.com/uc?export=view&id=1kUE0cddqWtcq4bnHCeS1Id4Kkyk4jNGZ",
+    year: "2024",
+    link: "https://youtu.be/AewcVLYtKUY?si=i6DJpkMHFddNnwXm"
   },
   {
     id: "6",
