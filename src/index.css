@@ -51,16 +51,4 @@
   }
 }
 
-/* Custom Cursor (Optional but adds to the vibe) */
-.custom-cursor {
-  width: 20px;
-  height: 20px;
-  background: var(--color-brand-accent);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transition: transform 0.1s ease;
-}
 

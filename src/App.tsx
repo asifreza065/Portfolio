@@ -12,7 +12,6 @@ import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { motion, useScroll, useSpring } from 'motion/react';
-import { useEffect, useState } from 'react';
 
 export default function App() {
   const { scrollYProgress } = useScroll();
@@ -22,28 +21,8 @@ export default function App() {
     restDelta: 0.001
   });
 
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
     <div className="relative bg-brand-black selection:bg-brand-accent selection:text-brand-black">
-      {/* Custom Cursor */}
-      <motion.div 
-        className="custom-cursor hidden md:block"
-        animate={{ 
-          x: mousePos.x - 10,
-          y: mousePos.y - 10
-        }}
-        transition={{ type: 'spring', damping: 20, stiffness: 250, mass: 0.5 }}
-      />
-
       {/* Progress Bar */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1 bg-brand-accent z-[100] origin-left"
