@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-white: #F5F5F3;
+  --color-brand-black: #0A0A0A;
+  --color-brand-accent: #F4B942;
+  --color-brand-gray: #D9D9D9;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-black text-brand-white font-sans selection:bg-brand-accent selection:text-brand-black;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tighter;
+  }
+}
+
+@layer utilities {
+  .clip-path-reveal {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
+  .editorial-mask {
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .text-huge {
+    font-size: clamp(3.5rem, 15vw, 12rem);
+    line-height: 0.85;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px currentColor;
+    color: transparent;
+  }
+}
+
+/* Custom Cursor (Optional but adds to the vibe) */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: var(--color-brand-accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+}
+
